@@ -2,7 +2,7 @@ import binascii
 import unittest
 # Import cryptography library
 from app.decrypt import Decryptor
-
+from cryptography.fernet import InvalidToken
 
 class TestAdapter:
     def __init__(self, _input):
