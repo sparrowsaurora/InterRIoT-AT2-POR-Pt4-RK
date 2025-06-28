@@ -1,13 +1,13 @@
 # Import cryptography library
 
 from app.key_utils import key32, key64
-
+from cryptography.fernet import Fernet
 
 class Decryptor:
     def __init__(self, key):
         key32_ = key32(key)
         key64_ = key64(key32_)
-
+        self.fernet = Fernet(key64_)
         # We need to do something with the key...
 
     def _decrypt(self, data: bytes) -> bytes:
@@ -20,7 +20,7 @@ class Decryptor:
         :param data: Data to be decrypted
         :return: Decrypted data
         """
-        raise NotImplementedError()
+        return self.fernet.decrypt(data)
 
     def decrypt(self, data) -> bytes:
         """
