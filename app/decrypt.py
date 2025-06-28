@@ -1,6 +1,6 @@
 # Import cryptography library
 
-from app.key_utils import key32, key64
+from key_utils import key32, key64
 from cryptography.fernet import Fernet
 
 class Decryptor:
