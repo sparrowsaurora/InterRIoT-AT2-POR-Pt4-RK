@@ -18,7 +18,7 @@ class Encryptor:
         :param data: Data to be encrypted
         :return: Encrypted data
         """
-        raise NotImplementedError()
+        return self.fernet.encrypt(data)
 
     def encrypt(self, data) -> bytes:
         """
