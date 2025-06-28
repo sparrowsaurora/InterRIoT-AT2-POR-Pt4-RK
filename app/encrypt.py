@@ -1,13 +1,14 @@
 # Import cryptography library
 
 from app.key_utils import key32, key64
+from cryptography.fernet import Fernet
 
 
 class Encryptor:
     def __init__(self, key):
         key32_ = key32(key)
         key64_ = key64(key32_)
-
+        self.fernet = Fernet(key64_)
         # We need to do something with the key...
 
     def _encrypt(self, data: bytes) -> bytes:
